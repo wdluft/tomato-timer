@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { SessionContext } from '../contexts/SessionContext';
+import { BreakContext } from '../contexts/BreakContext';
 
 const Session = () => {
-  const [sessionLength, setSessionLength] = useState(1500);
+  const { sessionLength } = useContext(SessionContext);
+  const { breakLength } = useContext(BreakContext);
 
-  const increaseLength = () => {
-    setSessionLength(sessionLength + 30);
-  };
-
-  const resetLegnth = () => {
-    setSessionLength(1500);
-  };
+  // const resetLegnth = () => {
+  //   setSessionLength(1500);
+  // };
 
   const showTime = () => {
     let minutes = Math.floor(sessionLength / 60);
@@ -28,12 +27,9 @@ const Session = () => {
       <h1>Session</h1>
       <p>{showTime()}</p>
       <p>PLAY / PAUSE</p>
-      <button onClick={resetLegnth} type="button">
+      {/* <button onClick={resetLegnth} type="button">
         RESET
-      </button>
-      <button type="button" onClick={increaseLength}>
-        Increase Time
-      </button>
+      </button> */}
     </div>
   );
 };

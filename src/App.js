@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Contexts
+import SessionContextProvider from './contexts/SessionContext';
+import BreakContextProvider from './contexts/BreakContext';
+
 // Components
 import SessionsLengths from './components/SessionsLengths';
 import Session from './components/Session';
@@ -9,8 +13,12 @@ function App() {
   return (
     <StyledContainer>
       <h1>Tomator Timer</h1>
-      <SessionsLengths />
-      <Session />
+      <SessionContextProvider>
+        <BreakContextProvider>
+          <SessionsLengths />
+          <Session />
+        </BreakContextProvider>
+      </SessionContextProvider>
     </StyledContainer>
   );
 }
