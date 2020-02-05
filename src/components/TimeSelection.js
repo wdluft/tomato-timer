@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { SessionContext } from '../contexts/SessionContext';
 import { BreakContext } from '../contexts/BreakContext';
+import { showTime } from '../custom-functions/showTime';
 
 const TimeSelection = ({ timeType }) => {
   const {
@@ -13,18 +14,6 @@ const TimeSelection = ({ timeType }) => {
   const { breakLength, increaseBreakLength, decreaseBreakLength } = useContext(
     BreakContext
   );
-
-  const showTime = time => {
-    let minutes = Math.floor(time / 60);
-    let seconds = time - minutes * 60;
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-    if (minutes < 10) {
-      minutes = `0${minutes}`;
-    }
-    return `${minutes}:${seconds}`;
-  };
 
   let shownTime;
   let increaseTime;
