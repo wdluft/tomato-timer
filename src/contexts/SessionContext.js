@@ -12,12 +12,20 @@ const SessionContextProvider = props => {
   };
 
   const decreaseSessionLength = () => {
+    if (sessionLength === 0) {
+      return 'Cannot set session length to less than 0';
+    }
     setSessionLength(sessionLength - 30);
   };
 
   return (
     <SessionContext.Provider
-      value={{ sessionLength, increaseSessionLength, decreaseSessionLength }}
+      value={{
+        sessionLength,
+        increaseSessionLength,
+        decreaseSessionLength,
+        setSessionLength,
+      }}
     >
       {children}
     </SessionContext.Provider>

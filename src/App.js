@@ -7,7 +7,7 @@ import BreakContextProvider from './contexts/BreakContext';
 
 // Components
 import SessionsLengths from './components/SessionsLengths';
-import Session from './components/Session';
+import Timer from './components/Timer';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <SessionContextProvider>
         <BreakContextProvider>
           <SessionsLengths />
-          <Session />
+          <Timer />
         </BreakContextProvider>
       </SessionContextProvider>
     </StyledContainer>

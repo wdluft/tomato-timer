@@ -12,12 +12,20 @@ const BreakContextProvider = props => {
   };
 
   const decreaseBreakLength = () => {
+    if (breakLength === 0) {
+      return 'Cannot set break length to less than 0';
+    }
     setBreakLength(breakLength - 30);
   };
 
   return (
     <BreakContext.Provider
-      value={{ breakLength, increaseBreakLength, decreaseBreakLength }}
+      value={{
+        breakLength,
+        increaseBreakLength,
+        decreaseBreakLength,
+        setBreakLength,
+      }}
     >
       {children}
     </BreakContext.Provider>
