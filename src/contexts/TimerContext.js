@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import useInterval from '../custom-functions/useInterval';
 
 export const TimerContext = createContext();
 
@@ -8,7 +7,7 @@ const TimerContextProvider = props => {
   const { children } = props;
 
   const [timeLeft, setTimeLeft] = useState(1500);
-  const [timerStatus, setTimerStatus] = useState('Work Sesion');
+  const [timerStatus, setTimerStatus] = useState('Work Session');
   const [timerRunning, setTimerRunning] = useState(false);
 
   const toggleTimerRunning = () => {
@@ -19,13 +18,6 @@ const TimerContextProvider = props => {
     }
   };
 
-  useInterval(
-    () => {
-      setTimeLeft(timeLeft - 1);
-    },
-    timerRunning ? 1000 : null
-  );
-
   return (
     <TimerContext.Provider
       value={{
@@ -34,6 +26,8 @@ const TimerContextProvider = props => {
         timerStatus,
         timerRunning,
         toggleTimerRunning,
+        setTimerRunning,
+        setTimerStatus,
       }}
     >
       {children}

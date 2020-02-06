@@ -6,12 +6,13 @@ import { TimerContext } from '../../contexts/TimerContext';
 const ResetButton = () => {
   const { setSessionLength } = useContext(SessionContext);
   const { setBreakLength } = useContext(BreakContext);
-  const { setTimeLeft } = useContext(TimerContext);
+  const { setTimeLeft, setTimerRunning } = useContext(TimerContext);
 
   const reset = () => {
     setSessionLength(1500);
     setBreakLength(300);
     setTimeLeft(1500);
+    setTimerRunning(false);
   };
 
   return (
