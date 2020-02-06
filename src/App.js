@@ -4,21 +4,24 @@ import styled from 'styled-components';
 // Contexts
 import SessionContextProvider from './contexts/SessionContext';
 import BreakContextProvider from './contexts/BreakContext';
+import TimerContextProvider from './contexts/TimerContext';
 
 // Components
 import SessionsLengths from './components/SessionsLengths';
-import Timer from './components/Timer';
+import Timer from './components/timer/Timer';
 
 function App() {
   return (
     <StyledContainer>
       <h1>Tomator Timer</h1>
-      <SessionContextProvider>
-        <BreakContextProvider>
-          <SessionsLengths />
-          <Timer />
-        </BreakContextProvider>
-      </SessionContextProvider>
+      <TimerContextProvider>
+        <SessionContextProvider>
+          <BreakContextProvider>
+            <SessionsLengths />
+            <Timer />
+          </BreakContextProvider>
+        </SessionContextProvider>
+      </TimerContextProvider>
     </StyledContainer>
   );
 }
