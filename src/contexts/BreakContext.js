@@ -16,11 +16,11 @@ const BreakContextProvider = props => {
   };
 
   const decreaseBreakLength = () => {
-    if (breakLength === 0) {
+    if (breakLength === 30) {
       return 'Cannot set break length to less than 0';
     }
     setBreakLength(breakLength - 30);
-    setTimeLeft(timeLeft - 30);
+    setTimeLeft(breakLength - 30);
   };
 
   return (
