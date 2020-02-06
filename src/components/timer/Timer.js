@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/media-has-caption */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { TimerContext } from '../../contexts/TimerContext';
 import { SessionContext } from '../../contexts/SessionContext';
 import { BreakContext } from '../../contexts/BreakContext';
@@ -8,6 +7,7 @@ import ResetButton from './ResetButton';
 import useInterval from '../../custom-functions/useInterval';
 
 const Timer = () => {
+  const [audio] = useState(new Audio('https://goo.gl/65cBl1'));
   const {
     timeLeft,
     timerStatus,
@@ -35,6 +35,7 @@ const Timer = () => {
     if (timeRemaining >= 0) {
       setTimeLeft(timeRemaining);
     } else {
+      audio.play();
       switchSession();
     }
   };
@@ -55,7 +56,6 @@ const Timer = () => {
         PLAY / PAUSE
       </button>
       <ResetButton />
-      <audio id="beep" preload="auto" src="https://goo.gl/65cBl1" />
     </div>
   );
 };
