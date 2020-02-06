@@ -1,14 +1,18 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import { TimerContext } from './TimerContext';
 
 export const BreakContext = createContext();
 
 const BreakContextProvider = props => {
   const { children } = props;
   const [breakLength, setBreakLength] = useState(300);
+  const { timeLeft, setTimeLeft } = useContext(TimerContext);
 
   const increaseBreakLength = () => {
     setBreakLength(breakLength + 30);
+    setTimeLeft(timeLeft + 30);
   };
 
   const decreaseBreakLength = () => {
@@ -16,6 +20,7 @@ const BreakContextProvider = props => {
       return 'Cannot set break length to less than 0';
     }
     setBreakLength(breakLength - 30);
+    setTimeLeft(timeLeft - 30);
   };
 
   return (

@@ -42,10 +42,9 @@ const Timer = () => {
 
   useInterval(
     () => {
-      // setTimeLeft(timeLeft - 1);
       decrementTime();
     },
-    timerRunning ? 100 : null
+    timerRunning ? 1000 : null
   );
 
   return (
