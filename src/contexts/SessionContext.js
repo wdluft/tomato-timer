@@ -8,11 +8,13 @@ export const SessionContext = createContext();
 const SessionContextProvider = props => {
   const { children } = props;
   const [sessionLength, setSessionLength] = useState(1500);
-  const { timeLeft, setTimeLeft } = useContext(TimerContext);
+  const { timeLeft, setTimeLeft, timerStatus } = useContext(TimerContext);
 
   const increaseSessionLength = () => {
     setSessionLength(sessionLength + 30);
-    setTimeLeft(timeLeft + 30);
+    if (timerStatus === 'Work Session') {
+      setTimeLeft(timeLeft + 30);
+    }
   };
 
   const decreaseSessionLength = () => {
@@ -20,7 +22,9 @@ const SessionContextProvider = props => {
       return 'Cannot set session length to less than 0';
     }
     setSessionLength(sessionLength - 30);
-    setTimeLeft(sessionLength - 30);
+    if (timerStatus === 'Work Session') {
+      setTimeLeft(timeLeft - 30);
+    }
   };
 
   return (

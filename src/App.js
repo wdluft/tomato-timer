@@ -30,13 +30,17 @@ export default App;
 
 const StyledContainer = styled.div`
   min-width: 300px;
-  min-height: 600px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
-  h1 {
+  & > h1 {
     color: var(--primary-color);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 `;

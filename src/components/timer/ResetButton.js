@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { SessionContext } from '../../contexts/SessionContext';
 import { BreakContext } from '../../contexts/BreakContext';
 import { TimerContext } from '../../contexts/TimerContext';
+import { Button } from '../../styled-elements/Button';
 
 const ResetButton = () => {
   const { setSessionLength } = useContext(SessionContext);
@@ -16,9 +17,9 @@ const ResetButton = () => {
   };
 
   return (
-    <button type="button" onClick={reset}>
+    <Button type="button" onClick={reset}>
       Reset
-    </button>
+    </Button>
   );
 };
 

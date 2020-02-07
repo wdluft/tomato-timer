@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { TimerContext } from '../../contexts/TimerContext';
 import { SessionContext } from '../../contexts/SessionContext';
 import { BreakContext } from '../../contexts/BreakContext';
 import { showTime } from '../../custom-functions/showTime';
 import ResetButton from './ResetButton';
 import useInterval from '../../custom-functions/useInterval';
+import { Button } from '../../styled-elements/Button';
 
 const Timer = () => {
   const [audio] = useState(new Audio('https://goo.gl/65cBl1'));
@@ -51,9 +54,9 @@ const Timer = () => {
     <div>
       <h1>{timerStatus}</h1>
       <p>{showTime(timeLeft)}</p>
-      <button type="button" onClick={toggleTimerRunning}>
-        PLAY / PAUSE
-      </button>
+      <Button type="button" onClick={toggleTimerRunning}>
+        <FontAwesomeIcon icon={faPlay} /> / <FontAwesomeIcon icon={faPause} />
+      </Button>
       <ResetButton />
     </div>
   );
