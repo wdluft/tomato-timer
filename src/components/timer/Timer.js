@@ -71,4 +71,8 @@ const StyledTimer = styled.div`
       font-size: 4rem;
     }
   }
+
+  button:focus {
+    outline: solid var(--primary-color);
+  }
 `;

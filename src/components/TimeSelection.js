@@ -108,6 +108,10 @@ const StyledDiv = styled.div`
     border: 2px solid #bbb;
   }
 
+  .increase:focus {
+    outline: solid var(--blue-color);
+  }
+
   .decrease:hover {
     color: var(--red-color);
     border: 2px solid var(--red-color);
@@ -116,5 +120,9 @@ const StyledDiv = styled.div`
   .decrease:disabled:hover {
     color: var(--background-color);
     border: 2px solid #bbb;
+  }
+
+  .decrease:focus {
+    outline: solid var(--red-color);
   }
 `;
