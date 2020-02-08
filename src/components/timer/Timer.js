@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { TimerContext } from '../../contexts/TimerContext';
@@ -51,15 +52,23 @@ const Timer = () => {
   );
 
   return (
-    <div>
+    <StyledTimer>
       <h1>{timerStatus}</h1>
-      <p>{showTime(timeLeft)}</p>
+      <p className="displayed-time">{showTime(timeLeft)}</p>
       <Button type="button" onClick={toggleTimerRunning}>
         <FontAwesomeIcon icon={faPlay} /> / <FontAwesomeIcon icon={faPause} />
       </Button>
       <ResetButton />
-    </div>
+    </StyledTimer>
   );
 };
 
 export default Timer;
+
+const StyledTimer = styled.div`
+  p {
+    &.displayed-time {
+      font-size: 4rem;
+    }
+  }
+`;

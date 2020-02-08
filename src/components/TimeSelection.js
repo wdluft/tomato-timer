@@ -38,7 +38,7 @@ const TimeSelection = ({ timeType }) => {
     return (
       <StyledDiv>
         <p>{timeType} Length</p>
-        <p>{shownTime}</p>
+        <p className="displayed-time">{shownTime}</p>
         <div>
           <Button
             type="button"
@@ -64,7 +64,7 @@ const TimeSelection = ({ timeType }) => {
     return (
       <StyledDiv>
         <p>{timeType} Length</p>
-        <p>{shownTime}</p>
+        <p className="displayed-time">{shownTime}</p>
         <div>
           <Button type="button" className="increase" onClick={increaseTime}>
             <FontAwesomeIcon icon={faArrowUp} size="lg" />
@@ -92,6 +92,10 @@ const StyledDiv = styled.div`
 
   p {
     font-size: 1.5rem;
+
+    &.displayed-time {
+      font-size: 2rem;
+    }
   }
 
   .increase:hover {

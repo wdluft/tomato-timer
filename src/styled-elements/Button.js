@@ -15,7 +15,7 @@ export const Button = styled.button`
   }
 
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.3;
     cursor: not-allowed;
   }
   &:disabled:hover {
