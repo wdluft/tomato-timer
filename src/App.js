@@ -9,6 +9,7 @@ import TimerContextProvider from './contexts/TimerContext';
 // Components
 import SessionsLengths from './components/SessionsLengths';
 import Timer from './components/timer/Timer';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <BreakContextProvider>
             <SessionsLengths />
             <Timer />
+            <Footer />
           </BreakContextProvider>
         </SessionContextProvider>
       </TimerContextProvider>
@@ -42,5 +44,6 @@ const StyledContainer = styled.div`
     font-size: 4rem;
     text-align: center;
     margin-bottom: 2rem;
+    font-weight: bold;
   }
 `;
