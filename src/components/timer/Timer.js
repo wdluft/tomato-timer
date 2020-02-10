@@ -72,7 +72,13 @@ const StyledTimer = styled.div`
     }
   }
 
-  button:focus {
-    outline: solid var(--primary-color);
+  button {
+    &:hover {
+      outline: solid var(--primary-color-3);
+    }
+
+    &:focus {
+      outline: solid var(--primary-color);
+    }
   }
 `;

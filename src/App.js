@@ -32,12 +32,12 @@ export default App;
 
 const StyledContainer = styled.div`
   min-width: 300px;
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 600px;
+  margin: auto;
   text-align: center;
+  box-shadow: 0 0 2px 5px var(--primary-color-4);
+  border-radius: 10px;
+  padding: 2rem;
 
   & > h1 {
     color: var(--primary-color);

@@ -46,6 +46,10 @@ const StyledFooter = styled.footer`
   a {
     text-decoration: none;
     color: var(--primary-color);
+
+    &:hover {
+      color: var(--primary-color-3);
+    }
   }
   @media (min-width: 500px) {
     h1 {

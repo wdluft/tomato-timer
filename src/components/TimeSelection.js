@@ -111,30 +111,30 @@ const StyledDiv = styled.div`
   }
 
   .increase:hover {
-    color: var(--blue-color);
-    border: 2px solid var(--blue-color);
+    color: var(--tertiary-color-1);
+    border: 2px solid var(--tertiary-color-1);
   }
 
   .increase:disabled:hover {
-    color: var(--background-color);
+    color: var(--dark-color);
     border: 2px solid #bbb;
   }
 
   .increase:focus {
-    outline: solid var(--blue-color);
+    outline: solid var(--tertiary-color-1);
   }
 
   .decrease:hover {
-    color: var(--red-color);
-    border: 2px solid var(--red-color);
+    color: var(--secondary-color-1);
+    border: 2px solid var(--secondary-color-1);
   }
 
   .decrease:disabled:hover {
-    color: var(--background-color);
+    color: var(--dark-color);
     border: 2px solid #bbb;
   }
 
   .decrease:focus {
-    outline: solid var(--red-color);
+    outline: solid var(--secondary-color-1);
   }
 `;
