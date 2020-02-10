@@ -17,7 +17,7 @@ const ResetButton = () => {
   };
 
   return (
-    <Button type="button" onClick={reset}>
+    <Button type="button" onClick={reset} title="Reset">
       Reset
     </Button>
   );

@@ -45,6 +45,7 @@ const TimeSelection = ({ timeType }) => {
             className="increase"
             onClick={increaseTime}
             disabled
+            title={`${timeType} Length Increase - Disabled`}
           >
             <FontAwesomeIcon icon={faArrowUp} size="lg" />
           </Button>
@@ -53,6 +54,7 @@ const TimeSelection = ({ timeType }) => {
             onClick={decreaseTime}
             className="decrease"
             disabled
+            title={`${timeType} Length Decrease - Disabled`}
           >
             <FontAwesomeIcon icon={faArrowDown} size="lg" />
           </Button>
@@ -66,10 +68,20 @@ const TimeSelection = ({ timeType }) => {
         <p>{timeType} Length</p>
         <p className="displayed-time">{shownTime}</p>
         <div>
-          <Button type="button" className="increase" onClick={increaseTime}>
+          <Button
+            type="button"
+            className="increase"
+            onClick={increaseTime}
+            title={`${timeType} Length Increase`}
+          >
             <FontAwesomeIcon icon={faArrowUp} size="lg" />
           </Button>
-          <Button type="button" onClick={decreaseTime} className="decrease">
+          <Button
+            type="button"
+            onClick={decreaseTime}
+            className="decrease"
+            title={`${timeType} Length Decrease`}
+          >
             <FontAwesomeIcon icon={faArrowDown} size="lg" />
           </Button>
         </div>

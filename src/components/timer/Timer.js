@@ -55,7 +55,7 @@ const Timer = () => {
     <StyledTimer>
       <h1>{timerStatus}</h1>
       <p className="displayed-time">{showTime(timeLeft)}</p>
-      <Button type="button" onClick={toggleTimerRunning}>
+      <Button type="button" onClick={toggleTimerRunning} title="Play / Pause">
         <FontAwesomeIcon icon={faPlay} /> / <FontAwesomeIcon icon={faPause} />
       </Button>
       <ResetButton />
