@@ -4,8 +4,8 @@ import TimeSelection from './TimeSelection';
 
 const SessionsLengths = () => (
   <StyledSessionsLengths>
-    <TimeSelection timeType="Break" />
     <TimeSelection timeType="Session" />
+    <TimeSelection timeType="Break" />
   </StyledSessionsLengths>
 );
 
